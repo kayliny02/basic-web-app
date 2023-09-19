@@ -48,4 +48,14 @@ describe("QueryProcessor", () => {
         expect(QueryProcessor("What is 12 multiplied by 1?")).toEqual("12");
     });
 
+    test('should subtract numbers', () => {
+        expect(QueryProcessor("What is 5 minus 5?")).toEqual("0");
+        expect(QueryProcessor("What is 12 minus 1?")).toEqual("11");
+    });
+
+    // test('should get prime numbers', () => {
+    //     expect(QueryProcessor("Which of the following numbers are primes: 65, 35, 2, 3, 44?")).toEqual("2, 3");
+    //     expect(QueryProcessor("Which of the following numbers are primes: 65, 35, 12, 3, 5?")).toEqual("3, 5");
+    // });
+
 });

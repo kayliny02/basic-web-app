@@ -33,5 +33,35 @@ export default function QueryProcessor(query: string): string {
     return (Math.max(x,y,z)).toString();
   }
 
+  const subtractMatch = query.match(/What is (\d+) minus (\d+)/);
+    if (subtractMatch) {
+        const x: number = parseInt(subtractMatch[1]);
+        const y: number = parseInt(subtractMatch[2]);
+    return (x-y).toString();
+  }
+
+  // function isPrime(num: number): boolean {
+  //   if (num <= 1) return false;
+  //   if (num <= 3) return true;
+
+  //   if (num % 2 === 0 || num % 3 === 0) return false;
+
+  //   for (let i = 5; i * i <= num; i += 6) {
+  //     if (num % i === 0 || num % (i + 2) === 0) return false;
+  //   }
+
+  //   return true;
+  // }
+
+  // const primeMatch = query.match(/Which of the following numbers are primes: (\d+), (\d+), (\d+), (\d+), (\d+)?/);
+  // if (primeMatch) {
+  //   const numbersString = primeMatch[1];
+  //   const numbers = numbersString.split(', ').map(Number);
+
+  //   const primeNumbers = numbers.filter(isPrime);
+  //   return primeNumbers.join(', ');
+  // }
+
+
   return "";
 }
