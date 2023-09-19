@@ -1,0 +1,27 @@
+name: Recitation 3 Check
+
+on:
+
+    push:
+
+    branches:
+
+    - main
+
+jobs:
+
+recitation3:
+
+    runs-on: ubuntu-latest
+
+    name: Recitation 3
+
+    steps:
+
+    - uses: actions/checkout@v3
+
+    - uses: bahmutov/npm-install@v1
+
+    - run: npm run lint (Run ESLint)
+
+    - run: npm run test (Run Jest)
