@@ -40,6 +40,13 @@ export default function QueryProcessor(query: string): string {
     return (x-y).toString();
   }
 
+  const powerMatch = query.match(/What is (\d+) to the power of (\d+)?/);
+    if (powerMatch) {
+        const x: number = parseInt(powerMatch[1]);
+        const y: number = parseInt(powerMatch[2]);
+    return (x**y).toString();
+  }
+
   // function isPrime(num: number): boolean {
   //   if (num <= 1) return false;
   //   if (num <= 3) return true;
